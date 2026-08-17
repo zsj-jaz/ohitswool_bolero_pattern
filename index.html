@@ -1,143 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>My Pattern Generator</title>
+  <title>Oh It's Wool Pattern Generator</title>
 
-  <!-- jsPDF -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/4.2.1/jspdf.umd.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 500px;
-      margin: 60px auto;
-      padding: 20px;
-    }
+  <!-- Markdown renderer -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
-    h1 {
-      margin-bottom: 30px;
-    }
-
-    label {
-      display: block;
-      margin-top: 20px;
-      margin-bottom: 5px;
-    }
-
-    input {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      box-sizing: border-box;
-    }
-
-    button {
-      margin-top: 30px;
-      padding: 12px 20px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-  </style>
+  <!-- HTML to PDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 
 <body>
 
-  <h1>Custom Knitting Pattern</h1>
+  <main class="app">
+    <section class="form-panel">
+      <h1>Oh It's Wool 🧶</h1>
+      <h2>Bolero Pattern Generator</h2>
 
-  <label for="bust">Bust measurement (cm)</label>
-  <input
-    type="number"
-    id="bust"
-    value="83"
-  >
+      <label>
+        Bust measurement, cm
+        <input id="bust" type="number" value="83" />
+      </label>
 
-  <label for="shoulder">Shoulder seam to shoulder seam (cm)</label>
-  <input
-    type="number"
-    id="shoulder"
-    value="28"
-  >
+      <label>
+        Shoulder seam to shoulder seam, cm
+        <input id="shoulder" type="number" value="28" />
+      </label>
 
-  <button onclick="generatePDF()">
-    Generate Pattern PDF
-  </button>
+      <label>
+        Gauge, stitches per 10 cm
+        <input id="gauge" type="number" value="23" />
+      </label>
 
+      <button id="downloadBtn">
+        Download PDF
+      </button>
+    </section>
 
-  <script>
-    function generatePDF() {
+    <section class="preview-panel">
+      <div id="preview" class="pattern-preview">
+        Loading pattern...
+      </div>
+    </section>
+  </main>
 
-      const bust =
-        document.getElementById("bust").value;
-
-      const shoulder =
-        document.getElementById("shoulder").value;
-
-
-      // Example pattern calculation
-      const stitches =
-        Math.round(bust * 2);
-
-
-      // Create PDF
-      const { jsPDF } = window.jspdf;
-
-      const pdf = new jsPDF();
-
-
-      pdf.setFontSize(22);
-      pdf.text(
-        "Custom Knitting Pattern",
-        20,
-        25
-      );
-
-
-      pdf.setFontSize(12);
-
-      pdf.text(
-        `Bust: ${bust} cm`,
-        20,
-        45
-      );
-
-      pdf.text(
-        `Shoulder seam: ${shoulder} cm`,
-        20,
-        55
-      );
-
-
-      pdf.setFontSize(16);
-
-      pdf.text(
-        "Your Pattern",
-        20,
-        75
-      );
-
-
-      pdf.setFontSize(12);
-
-      pdf.text(
-        `Cast on ${stitches} stitches.`,
-        20,
-        90
-      );
-
-      pdf.text(
-        "Work in stockinette stitch.",
-        20,
-        100
-      );
-
-
-      // Download
-      pdf.save("my-custom-pattern.pdf");
-    }
-  </script>
+  <script src="formulas.js"></script>
+  <script src="app.js"></script>
 
 </body>
+
 </html>
