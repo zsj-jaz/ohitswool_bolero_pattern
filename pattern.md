@@ -3,9 +3,9 @@
   <h1>Oh It's Wool</h1>
 </div>
 
-<h2 class="pattern-subtitle">Made-to-Measure Bolero Pattern</h2>
+<h2 class="pattern-subtitle">Made-to-Measure Bolero Free Pattern</h2>
 
-This pattern was generated from your custom measurements.
+This pattern was generated from your measurements.
 
 | Measurement | Value |
 |---|---:|
@@ -17,16 +17,6 @@ This pattern was generated from your custom measurements.
 | Gauge Down | {gaugeDown} rows / 1 cm |
 ---
 
-## Calculated Pattern Values
-
-| Symbol | Value |
-|---|---:|
-| A | {A} sts |
-| O | {O} rows |
-| P | {P} repeats |
-| S | {S} sts |
-
----
 
 ## Back Panel
 

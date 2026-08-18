@@ -1,115 +1,212 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f8f4ef;
-    color: #2b2520;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    background: #eee7dd;
+    color: #302720;
 }
 
 .app {
     display: grid;
     grid-template-columns: 320px 1fr;
-    gap: 30px;
-    max-width: 1100px;
-    margin: 40px auto;
+    gap: 28px;
+    max-width: 1160px;
+    margin: 28px auto 72px;
     padding: 20px;
 }
 
-.form-panel {
-    background: white;
-    padding: 24px;
+.hero {
+    position: relative;
+    grid-column: 1 / -1;
+    height: clamp(420px, 58vw, 640px);
+    overflow: hidden;
     border-radius: 18px;
-    height: fit-content;
+    background: #e6d8ca;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-.form-panel h1 {
-    margin-top: 0;
-}
-
-label {
+.hero-media {
     display: block;
-    margin-top: 18px;
-    font-weight: bold;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
 }
 
-input {
-    width: 100%;
-    box-sizing: border-box;
-    margin-top: 6px;
-    padding: 10px;
-    font-size: 16px;
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(32, 25, 20, 0.76) 0%, rgba(32, 25, 20, 0.42) 45%, transparent 75%);
+    pointer-events: none;
+}
+
+.hero-intro {
+    position: absolute;
+    z-index: 1;
+    left: clamp(24px, 6vw, 72px);
+    bottom: clamp(28px, 7vw, 72px);
+    width: min(480px, calc(100% - 48px));
+    color: white;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
+
+.hero-kicker {
+    margin: 0 0 10px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.hero-intro h1 {
+    margin: 0 0 14px;
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 0.95;
+}
+
+.hero-intro p:last-child {
+    margin: 0;
+    font-size: clamp(16px, 2vw, 19px);
+    line-height: 1.55;
+}
+
+.form-panel {
+    position: sticky;
+    top: 20px;
+    background: #f8f4ed;
+    padding: 28px;
+    border: 1px solid rgba(87, 68, 52, 0.13);
+    border-radius: 20px;
+    height: fit-content;
+    box-shadow: 0 16px 44px rgba(62, 44, 30, 0.09);
+}
+
+.panel-heading {
+    margin-bottom: 30px;
+}
+
+.section-kicker {
+    margin: 0 0 7px;
+    color: #876f5d;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.panel-heading h2,
+.preview-heading h2 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.panel-heading > p:last-child {
+    margin: 12px 0 0;
+    color: #796c62;
+    font-size: 14px;
+    line-height: 1.55;
 }
 
 button {
     margin-top: 24px;
     width: 100%;
-    padding: 12px;
-    font-size: 16px;
+    padding: 15px 18px;
+    font-size: 14px;
+    font-weight: 750;
+    letter-spacing: 0.02em;
     cursor: pointer;
-    border: none;
+    border: 1px solid #302720;
     border-radius: 999px;
-    background: #2b2520;
+    background: #302720;
     color: white;
+    transition: transform 180ms ease, background 180ms ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    background: #574538;
+}
+
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid rgba(145, 113, 84, 0.28);
+    outline-offset: 2px;
+}
+
+button span {
+    margin-left: 6px;
 }
 
 .measurement-title {
-    font-size: 20px;
-    font-weight: 800;
-    margin-bottom: 5px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
     text-align: left;
 }
 
 .measurement-box {
-    margin-top: 1px;
-    padding: 4px 10px 10px 10px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background: #faf7f3;
+    padding: 4px 16px 12px;
+    border: 1px solid #d9cec1;
+    border-radius: 14px;
+    background: #fffdf9;
 }
 
 .measurement-row {
     display: grid;
-    grid-template-columns: 1fr 90px auto;
+    grid-template-columns: 1fr 68px 22px;
     align-items: center;
-    gap: 8px;
-    margin-top: 8px;
+    gap: 7px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee6dc;
 }
 
+.measurement-row:last-child {
+    border-bottom: 0;
+}
 
 .measurement-row label {
     margin: 0;
-    font-weight: 800;
-    font-size: 18px;
-    text-align: right;
+    color: #554940;
+    font-weight: 650;
+    font-size: 13px;
+    text-align: left;
 }
 
 .measurement-row input {
-    width: 90px;
+    width: 68px;
     margin: 0;
-    padding: 10px;
-    font-size: 18px;
+    padding: 9px 8px;
+    border: 1px solid #d8cbbc;
+    border-radius: 9px;
+    background: #f7f1e9;
+    color: #302720;
+    font-size: 15px;
     box-sizing: border-box;
 }
 
 .measurement-row span {
-    font-weight: 800;
-    font-size: 18px;
+    color: #8c7d71;
+    font-size: 12px;
 }
 
 .gauge-title {
-    font-size: 20px;
-    font-weight: 800;
-    margin-top: 20px;
-    margin-bottom: 5px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 26px;
+    margin-bottom: 10px;
     text-align: left;
 }
 
 .gauge-box {
-    margin-top: 0px;
-    padding: 4px 10px 10px 10px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background: #faf7f3;
+    padding: 7px 10px 10px;
+    border: 1px solid #d9cec1;
+    border-radius: 14px;
+    background: #fffdf9;
 }
 
 .gauge-table {
@@ -119,9 +216,12 @@ button {
 }
 
 .gauge-table th {
-    font-size: 18px;
-    font-weight: 800;
+    color: #7c6e63;
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: 0.04em;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .gauge-table tbody th {
@@ -137,20 +237,45 @@ button {
     width: 100%;
     box-sizing: border-box;
     margin: 0;
-    padding: 12px;
-    font-size: 18px;
+    padding: 9px 8px;
+    border: 1px solid #d8cbbc;
+    border-radius: 9px;
+    background: #f7f1e9;
+    color: #302720;
+    font-size: 15px;
 }
 
 .preview-panel {
-    background: white;
-    padding: 40px;
-    border-radius: 18px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    background: #d8c8b7;
+    padding: 18px;
+    border-radius: 20px;
+    box-shadow: 0 16px 44px rgba(62, 44, 30, 0.09);
+}
+
+.preview-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px 12px 22px;
+}
+
+.preview-heading > span {
+    color: #6f5e50;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
 }
 
 .pattern-preview {
     max-width: 700px;
     margin: 0 auto;
+    padding: clamp(28px, 5vw, 54px);
+    border: 1px solid rgba(92, 70, 50, 0.1);
+    border-radius: 12px;
+    background: #fffdf9;
+    box-shadow: 0 8px 28px rgba(55, 37, 24, 0.12);
     line-height: 1.6;
     font-size: 15px;
 }
@@ -158,12 +283,16 @@ button {
 .pattern-preview h1 {
     text-align: center;
     margin-bottom: 8px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 500;
 }
 
 .pattern-preview h2 {
     margin-top: 32px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 6px;
+    border-bottom: 1px solid #ded3c6;
+    padding-bottom: 9px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 500;
 }
 
 .pattern-preview table {
@@ -174,12 +303,12 @@ button {
 
 .pattern-preview th,
 .pattern-preview td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    border: 1px solid #ded3c6;
+    padding: 9px 11px;
 }
 
 .pattern-preview th {
-    background: #f3eee8;
+    background: #f1e8dc;
 }
 
 .pattern-brand {
@@ -250,5 +379,38 @@ button {
 @media (max-width: 800px) {
     .app {
         grid-template-columns: 1fr;
+        margin-top: 20px;
+    }
+
+    .hero {
+        height: min(125vw, 560px);
+    }
+
+    .hero::after {
+        background: linear-gradient(0deg, rgba(32, 25, 20, 0.82) 0%, rgba(32, 25, 20, 0.38) 58%, transparent 85%);
+    }
+
+    .hero-intro {
+        left: 24px;
+        bottom: 28px;
+    }
+
+    .hero-intro p:last-child {
+        font-size: 15px;
+        line-height: 1.45;
+    }
+
+    .form-panel {
+        position: static;
+    }
+
+    .preview-panel {
+        padding: 12px;
+    }
+
+    .preview-heading {
+        align-items: start;
+        flex-direction: column;
+        gap: 8px;
     }
 }

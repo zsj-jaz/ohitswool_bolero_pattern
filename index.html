@@ -19,8 +19,40 @@
 <body>
 
   <main class="app">
+    <section class="hero" aria-label="Oh It's Wool featured image">
+      <video
+        class="hero-media"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="assets/IMG_6870.jpg"
+        aria-label="Model wearing the striped Oh It's Wool bolero"
+      >
+        <source src="assets/bolero-loop.mp4" type="video/mp4" />
+      </video>
+
+      <div class="hero-intro">
+        <p class="hero-kicker">A free made-to-measure pattern</p>
+        <h1>Hi, friends!</h1>
+        <p>
+          This is my first time writing a pattern, and I honestly don’t really know
+          what I’m doing yet. I’m sure there are mistakes. I also don’t know how to
+          grade sizes, so I made it made-to-measure instead. I hope you’ll still
+          give it a try!
+        </p>
+      </div>
+    </section>
+
     <section class="form-panel">
-      <div class="measurement-title">Body Measurements</div>
+      <div class="panel-heading">
+        <p class="section-kicker">Make it yours</p>
+        <h2>Customize your pattern</h2>
+        <p>Enter your measurements and gauge. Your pattern will update as you type.</p>
+      </div>
+
+      <div class="measurement-title">Your measurements</div>
       <div class="measurement-box">
 
 
@@ -43,14 +75,14 @@
         </div>
 
         <div class="measurement-row">
-          <label for="upperarm">upper arm circ.</label>
-          <input id="upperarm" type="number" value="28">
+          <label for="upperArm">upper arm circ.</label>
+          <input id="upperArm" type="number" value="28">
           <span>cm</span>
         </div>
 
 
       </div>
-      <div class="gauge-title">Gauge</div>
+      <div class="gauge-title">Your gauge</div>
       <div class="gauge-box">
 
 
@@ -88,11 +120,18 @@
       </div>
 
       <button id="downloadBtn">
-        Download PDF
+        Download your pattern <span aria-hidden="true">↓</span>
       </button>
     </section>
 
     <section class="preview-panel">
+      <div class="preview-heading">
+        <div>
+          <p class="section-kicker">Live preview</p>
+          <h2>Your custom pattern</h2>
+        </div>
+        <span>Updates automatically</span>
+      </div>
       <div id="preview" class="pattern-preview">
         Loading pattern...
       </div>
