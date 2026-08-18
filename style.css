@@ -295,6 +295,44 @@ button span {
     font-weight: 500;
 }
 
+.pattern-preview p {
+    margin: 0.7rem 0;
+}
+
+.pattern-preview .pattern-lead {
+    margin: 1.25rem 0 1.75rem;
+}
+
+.pattern-instruction-block {
+    margin: 1.75rem 0;
+}
+
+.pattern-instruction-block .pattern-repeat {
+    margin: 0 0 0.35rem;
+}
+
+.pattern-rows {
+    margin-left: clamp(1.25rem, 8%, 4.5rem);
+}
+
+.pattern-rows p {
+    margin: 0.25rem 0;
+}
+
+.pattern-rows strong {
+    font-weight: 750;
+}
+
+.pattern-value {
+    color: #8f29e8;
+    font-weight: 800;
+}
+
+.pattern-preview .pattern-note {
+    margin: 2rem 0 1rem;
+    font-weight: 650;
+}
+
 .pattern-preview table {
     width: 100%;
     border-collapse: collapse;

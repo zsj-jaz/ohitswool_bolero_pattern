@@ -13,12 +13,11 @@ function calculatePattern(inputs) {
     const rowsPerCm = inputs.gaugeDown;
 
     const A = makeEven(bust * stitchesPerCm * 0.38);
-    const O = makeEven(3 * rowsPerCm);
 
-    // temporary test formulas
-    const P = makeEven(
-        ((((bust / 2) - shoulder) / 2) / 1.5 - 3) / 2
-    );
+    // TODO: Replace these placeholder values with the correct row calculations.
+    const B = 0;
+    const C = 0;
+    const D = 0;
 
     const S = makeEven(upperArm * stitchesPerCm);
 
@@ -37,8 +36,9 @@ function calculatePattern(inputs) {
         gaugeDown: rowsPerCm.toFixed(2),
 
         A,
-        O,
-        P,
+        B,
+        C,
+        D,
         S
     };
 }

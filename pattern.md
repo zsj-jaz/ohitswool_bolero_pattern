@@ -18,22 +18,41 @@ This pattern was generated from your measurements.
 ---
 
 
-## Back Panel
+## Back Right
 
-Long tail cast on **{A} sts**.
+<p class="pattern-lead">Using the long-tail method, cast on <strong><span class="pattern-value">{A}</span> sts</strong>.</p>
 
-Repeat Rows 1–2 for **{O} rows**.
+<div class="pattern-instruction-block">
+  <p class="pattern-repeat">Repeat Rows 1–2 until you have worked <strong><span class="pattern-value">{B}</span> rows</strong> in total.</p>
+  <div class="pattern-rows">
+    <p><strong>Row 1 WS:</strong> P all sts.</p>
+    <p><strong>Row 2 RS:</strong> K all sts.</p>
+  </div>
+</div>
 
-**Row 1 WS:** P all sts, turn work.  
-**Row 2 RS:** K all sts, turn work.
+<div class="pattern-instruction-block">
+  <p class="pattern-repeat">Repeat Rows 3–4 for <strong><span class="pattern-value">{C}</span> rows</strong>.</p>
+  <div class="pattern-rows">
+    <p><strong>Row 3 WS:</strong> P all sts.</p>
+    <p><strong>Row 4 RS:</strong> K2, LLI, K to end of row.</p>
+  </div>
+</div>
 
-Repeat Rows 3–4 for **{P} rows**.
+<div class="pattern-instruction-block">
+  <p class="pattern-repeat">Repeat Rows 5–6 for <strong><span class="pattern-value">{D}</span> rows</strong>.</p>
+  <div class="pattern-rows">
+    <p><strong>Row 5 WS:</strong> P to 2 sts before end of row, LLIP, P2.</p>
+    <p><strong>Row 6 RS:</strong> K2, LLI, K to end of row.</p>
+  </div>
+</div>
+
+<p class="pattern-note">Place all sts on hold. Break the yarn, leaving a long tail to weave in later.</p>
 
 ---
 
 ## Sleeves
 
-Cast on **{S} sts**.
+Cast on <strong><span class="pattern-value">{S}</span> sts</strong>.
 
 Work in stockinette stitch until sleeve reaches desired length.
 
