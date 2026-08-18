@@ -6,26 +6,36 @@ function makeEven(number) {
 function calculatePattern(inputs) {
     const bust = inputs.bust;
     const shoulder = inputs.shoulder;
-    const gauge = inputs.gauge;
+    const armhole = inputs.armhole;
+    const upperArm = inputs.upperArm;
 
-    const stitchesPerCm = gauge / 10;
+    const stitchesPerCm = inputs.gaugeAcross;
+    const rowsPerCm = inputs.gaugeDown;
 
-    // Simple test formulas.
-    // Later we replace these with your real ones.
     const A = makeEven(bust * stitchesPerCm * 0.38);
+    const O = makeEven(3 * rowsPerCm);
 
-    const O = makeEven(3 * 2.3);
-
+    // temporary test formulas
     const P = makeEven(
         ((((bust / 2) - shoulder) / 2) / 1.5 - 3) / 2
     );
 
-    const S = makeEven(shoulder * stitchesPerCm * 0.8);
+    const S = makeEven(upperArm * stitchesPerCm);
 
     return {
         bust,
         shoulder,
-        gauge,
+        armhole,
+        upperArm,
+
+        gaugeAcrossSts: inputs.gaugeAcrossSts,
+        gaugeAcrossCm: inputs.gaugeAcrossCm,
+        gaugeDownRows: inputs.gaugeDownRows,
+        gaugeDownCm: inputs.gaugeDownCm,
+
+        gaugeAcross: stitchesPerCm.toFixed(2),
+        gaugeDown: rowsPerCm.toFixed(2),
+
         A,
         O,
         P,

@@ -10,9 +10,11 @@ This pattern was generated from your custom measurements.
 | Measurement | Value |
 |---|---:|
 | Bust | {bust} cm |
-| Shoulder seam to shoulder seam | {shoulder} cm |
-| Gauge | {gauge} sts / 10 cm |
-
+| Shoulder seam width | {shoulder} cm |
+| Armhole | {armhole} cm |
+| Upper arm circumference | {upperArm} cm |
+| Gauge Across | {gaugeAcross} sts / 1 cm |
+| Gauge Down | {gaugeDown} rows / 1 cm |
 ---
 
 ## Calculated Pattern Values

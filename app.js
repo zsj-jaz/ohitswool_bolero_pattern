@@ -7,10 +7,25 @@ async function loadPatternTemplate() {
 }
 
 function getInputs() {
+    const gaugeAcrossSts = Number(document.getElementById("gaugeAcrossSts").value);
+    const gaugeAcrossCm = Number(document.getElementById("gaugeAcrossCm").value);
+
+    const gaugeDownRows = Number(document.getElementById("gaugeDownRows").value);
+    const gaugeDownCm = Number(document.getElementById("gaugeDownCm").value);
+
     return {
         bust: Number(document.getElementById("bust").value),
         shoulder: Number(document.getElementById("shoulder").value),
-        gauge: Number(document.getElementById("gauge").value)
+        armhole: Number(document.getElementById("armhole").value),
+        upperArm: Number(document.getElementById("upperArm").value),
+
+        gaugeAcrossSts,
+        gaugeAcrossCm,
+        gaugeDownRows,
+        gaugeDownCm,
+
+        gaugeAcross: gaugeAcrossSts / gaugeAcrossCm,
+        gaugeDown: gaugeDownRows / gaugeDownCm
     };
 }
 
@@ -63,9 +78,21 @@ function downloadPDF() {
         .save();
 }
 
-document.getElementById("bust").addEventListener("input", updatePreview);
-document.getElementById("shoulder").addEventListener("input", updatePreview);
-document.getElementById("gauge").addEventListener("input", updatePreview);
+[
+    "bust",
+    "shoulder",
+    "armhole",
+    "upperArm",
+    "gaugeAcrossSts",
+    "gaugeAcrossCm",
+    "gaugeDownRows",
+    "gaugeDownCm"
+].forEach(id => {
+    const element = document.getElementById(id);
+    if (element) {
+        element.addEventListener("input", updatePreview);
+    }
+});
 
 document.getElementById("downloadBtn").addEventListener("click", downloadPDF);
 
