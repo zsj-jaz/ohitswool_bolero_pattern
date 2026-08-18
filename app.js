@@ -52,18 +52,58 @@ function updatePreview() {
         marked.parse(filledMarkdown);
 }
 
-function downloadPDF() {
-    const element = document.getElementById("preview");
+async function downloadPDF() {
+    const preview = document.getElementById("preview");
+    const downloadButton = document.getElementById("downloadBtn");
+
+    const exportHost = document.createElement("div");
+    exportHost.className = "pdf-export-host";
+
+    const exportElement = preview.cloneNode(true);
+    exportElement.removeAttribute("id");
+    exportElement.classList.add("pdf-export");
+
+    exportHost.appendChild(exportElement);
+    document.body.appendChild(exportHost);
+
+    downloadButton.disabled = true;
+    downloadButton.textContent = "Preparing your pattern…";
+
+    await new Promise(resolve => requestAnimationFrame(resolve));
+
+    const images = Array.from(exportElement.querySelectorAll("img"));
+    await Promise.all(images.map(image => {
+        if (image.complete) return Promise.resolve();
+
+        return new Promise(resolve => {
+            image.addEventListener("load", resolve, { once: true });
+            image.addEventListener("error", resolve, { once: true });
+        });
+    }));
 
     const options = {
-        margin: 0.5,
+        margin: [0.55, 0.5, 0.55, 0.5],
         filename: "ohitswool-custom-bolero.pdf",
+        pagebreak: {
+            mode: ["css", "legacy"],
+            avoid: [
+                "table",
+                ".pattern-brand",
+                ".pattern-instruction-block",
+                ".pattern-diagram-placeholder",
+                ".pattern-note"
+            ]
+        },
         image: {
             type: "jpeg",
             quality: 0.98
         },
         html2canvas: {
-            scale: 2
+            scale: 2,
+            useCORS: true,
+            backgroundColor: "#fffdf9",
+            scrollX: 0,
+            scrollY: 0
         },
         jsPDF: {
             unit: "in",
@@ -72,10 +112,19 @@ function downloadPDF() {
         }
     };
 
-    html2pdf()
-        .set(options)
-        .from(element)
-        .save();
+    try {
+        await html2pdf()
+            .set(options)
+            .from(exportElement)
+            .save();
+    } catch (error) {
+        console.error("Unable to generate the pattern PDF:", error);
+        window.alert("The PDF could not be created. Please try again.");
+    } finally {
+        exportHost.remove();
+        downloadButton.disabled = false;
+        downloadButton.innerHTML = "Download your pattern <span aria-hidden=\"true\">↓</span>";
+    }
 }
 
 [

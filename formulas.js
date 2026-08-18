@@ -3,6 +3,11 @@ function makeEven(number) {
     return rounded % 2 === 0 ? rounded : rounded + 1;
 }
 
+function makeOdd(number) {
+    const rounded = Math.round(number);
+    return rounded % 2 !== 0 ? rounded : rounded + 1;
+}
+
 function calculatePattern(inputs) {
     const bust = inputs.bust;
     const shoulder = inputs.shoulder;
@@ -12,12 +17,14 @@ function calculatePattern(inputs) {
     const stitchesPerCm = inputs.gaugeAcross;
     const rowsPerCm = inputs.gaugeDown;
 
-    const A = makeEven(bust * stitchesPerCm * 0.38);
+    const A = Math.round(((shoulder * stitchesPerCm) - 30) / 2);
 
-    // TODO: Replace these placeholder values with the correct row calculations.
-    const B = 0;
-    const C = 0;
-    const D = 0;
+    // TODO: Replace these placeholder values with the correct calculations.
+    const B = makeEven(rowsPerCm * 2);
+    const C = makeEven(rowsPerCm * 1.5);
+    const D = makeOdd(rowsPerCm * 1);
+    const DPlusOne = D + 1;
+    const E = 0;
 
     const S = makeEven(upperArm * stitchesPerCm);
 
@@ -39,6 +46,8 @@ function calculatePattern(inputs) {
         B,
         C,
         D,
+        DPlusOne,
+        E,
         S
     };
 }

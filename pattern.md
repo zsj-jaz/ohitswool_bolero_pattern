@@ -39,7 +39,7 @@ This pattern was generated from your measurements.
 </div>
 
 <div class="pattern-instruction-block">
-  <p class="pattern-repeat">Repeat Rows 5–6 for <strong><span class="pattern-value">{D}</span> rows</strong>.</p>
+  <p class="pattern-repeat">Repeat Rows 5–6 for <strong><span class="pattern-value">{D}</span> rows</strong>, finishing with a WS row.</p>
   <div class="pattern-rows">
     <p><strong>Row 5 WS:</strong> P to 2 sts before end of row, LLIP, P2.</p>
     <p><strong>Row 6 RS:</strong> K2, LLI, K to end of row.</p>
@@ -47,6 +47,53 @@ This pattern was generated from your measurements.
 </div>
 
 <p class="pattern-note">Place all sts on hold. Break the yarn, leaving a long tail to weave in later.</p>
+
+---
+
+## Back Left
+
+<p class="pattern-lead">Using the long-tail method, cast on <strong><span class="pattern-value">{A}</span> sts</strong>.</p>
+
+<div class="pattern-instruction-block">
+  <p class="pattern-repeat">Repeat Rows 1–2 until you have worked <strong><span class="pattern-value">{B}</span> rows</strong> in total.</p>
+  <div class="pattern-rows">
+    <p><strong>Row 1 WS:</strong> P all sts.</p>
+    <p><strong>Row 2 RS:</strong> K all sts.</p>
+  </div>
+</div>
+
+<div class="pattern-instruction-block">
+  <p class="pattern-repeat">Repeat Rows 3–4 for <strong><span class="pattern-value">{C}</span> rows</strong>.</p>
+  <div class="pattern-rows">
+    <p><strong>Row 3 WS:</strong> P all sts.</p>
+    <p><strong>Row 4 RS:</strong> K to 2 sts before end of row, RLI, K2.</p>
+  </div>
+</div>
+
+<div class="pattern-instruction-block">
+  <p class="pattern-repeat">Repeat Rows 5–6 for <strong><span class="pattern-value">{DPlusOne}</span> rows</strong>, finishing with a RS row.</p>
+  <div class="pattern-rows">
+    <p><strong>Row 5 WS:</strong> P2, RLIP, P to end of row.</p>
+    <p><strong>Row 6 RS:</strong> K to 2 sts before end of row, RLI, K2.</p>
+  </div>
+</div>
+
+<p class="pattern-note">Do not break the yarn.</p>
+
+---
+
+## Join Back Right and Back Left
+
+Join the two back panels as follows:
+
+<div class="pattern-diagram-placeholder" role="img" aria-label="Placeholder for a diagram showing how to join the back panels">
+  <strong>Back panel joining diagram</strong>
+  <span>Replace this placeholder with your diagram.</span>
+</div>
+
+After the last RS row, use the backward-loop method to cast on <strong><span class="pattern-value">{E}</span> sts</strong>.
+
+Continue knitting across the Back Right panel.
 
 ---
 

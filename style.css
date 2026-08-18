@@ -130,6 +130,12 @@ button:hover {
     background: #574538;
 }
 
+button:disabled {
+    cursor: wait;
+    opacity: 0.65;
+    transform: none;
+}
+
 button:focus-visible,
 input:focus-visible {
     outline: 3px solid rgba(145, 113, 84, 0.28);
@@ -331,6 +337,65 @@ button span {
 .pattern-preview .pattern-note {
     margin: 2rem 0 1rem;
     font-weight: 650;
+}
+
+.pattern-diagram-placeholder {
+    display: grid;
+    min-height: 150px;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    place-content: center;
+    gap: 0.35rem;
+    border: 2px dashed #cdbdad;
+    border-radius: 10px;
+    background: #f7f1e9;
+    color: #796c62;
+    text-align: center;
+}
+
+.pattern-diagram-placeholder strong {
+    color: #554940;
+}
+
+.pattern-diagram-placeholder span {
+    font-size: 0.875rem;
+}
+
+.pdf-export-host {
+    position: fixed;
+    z-index: -10000;
+    top: 0;
+    left: 0;
+    width: 7.5in;
+    pointer-events: none;
+}
+
+.pattern-preview.pdf-export {
+    width: 7.5in;
+    max-width: none;
+    margin: 0;
+    padding: 0 0.2in;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    font-size: 11pt;
+    line-height: 1.5;
+}
+
+.pdf-export h2,
+.pdf-export hr {
+    break-after: avoid-page;
+    page-break-after: avoid;
+}
+
+.pdf-export table,
+.pdf-export .pattern-brand,
+.pdf-export .pattern-instruction-block,
+.pdf-export .pattern-diagram-placeholder,
+.pdf-export .pattern-note {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
 }
 
 .pattern-preview table {
