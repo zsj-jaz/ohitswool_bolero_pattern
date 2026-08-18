@@ -1,6 +1,9 @@
-# Oh It's Wool
+<div class="pattern-brand">
+  <img src="assets/ohitswoollogo.png" alt="Oh It's Wool logo" class="pattern-logo">
+  <h1>Oh It's Wool</h1>
+</div>
 
-## Made-to-Measure Bolero Pattern
+<h2 class="pattern-subtitle">Made-to-Measure Bolero Pattern</h2>
 
 This pattern was generated from your custom measurements.
 

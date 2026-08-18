@@ -20,23 +20,72 @@
 
   <main class="app">
     <section class="form-panel">
-      <h1>Oh It's Wool 🧶</h1>
-      <h2>Bolero Pattern Generator</h2>
+      <div class="measurement-title">Body Measurements</div>
+      <div class="measurement-box">
 
-      <label>
-        Bust measurement, cm
-        <input id="bust" type="number" value="83" />
-      </label>
 
-      <label>
-        Shoulder seam to shoulder seam, cm
-        <input id="shoulder" type="number" value="28" />
-      </label>
+        <div class="measurement-row">
+          <label for="bust">bust</label>
+          <input id="bust" type="number" value="83">
+          <span>cm</span>
+        </div>
 
-      <label>
-        Gauge, stitches per 10 cm
-        <input id="gauge" type="number" value="23" />
-      </label>
+        <div class="measurement-row">
+          <label for="shoulder">shoulder seam width</label>
+          <input id="shoulder" type="number" value="28">
+          <span>cm</span>
+        </div>
+
+        <div class="measurement-row">
+          <label for="armhole">armhole</label>
+          <input id="armhole" type="number" value="28">
+          <span>cm</span>
+        </div>
+
+        <div class="measurement-row">
+          <label for="upperarm">upper arm circ.</label>
+          <input id="upperarm" type="number" value="28">
+          <span>cm</span>
+        </div>
+
+
+      </div>
+      <div class="gauge-title">Gauge</div>
+      <div class="gauge-box">
+
+
+        <table class="gauge-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>st count</th>
+              <th>cm</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <th>across</th>
+              <td>
+                <input id="gaugeAcrossSts" type="number" value="15">
+              </td>
+              <td>
+                <input id="gaugeAcrossCm" type="number" value="6.5" step="0.1">
+              </td>
+            </tr>
+
+            <tr>
+              <th>down</th>
+              <td>
+                <input id="gaugeDownRows" type="number" value="20">
+              </td>
+              <td>
+                <input id="gaugeDownCm" type="number" value="6.5" step="0.1">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <button id="downloadBtn">
         Download PDF
